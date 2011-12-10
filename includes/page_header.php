@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<title>
-			TnH Industries Mining Tracker - v0.0.1
+			TnH Industries Mining Tracker - v0.1
 		</title>
 	</head>
 </html>
@@ -22,6 +22,6 @@ else if ($trusted == '')
 	echo('<center><font color="red"><strong>' . $oog_en . '</strong></font></center><br /><br />');
 }
 
-echo('<center><h2>TnH Industries Mining Tracker - v0.0.1</h2></center><br /><br /><br />');
+echo('<center><h2>TnH Industries Mining Tracker - v0.1</h2></center><br /><br /><br />');
 
 ?>

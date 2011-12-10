@@ -20,11 +20,11 @@ if($page == 'login')
 	//Check for IGB and fill in username value if present
 	if($trusted == 1}
 	{
-		echo('<form action="login.php" method="post">' . $uname_en . ': <input type="text" name="uname" readonly="readonly"> ' . $pwd_en . '<input type="text" name="pwd"><br /><input type="submit" value="Log In">');
+		echo('<form action="login.php" method="post">' . $uname_en . ': <input type="text" name="uname" readonly="readonly"> ' . $pwd_en . '<input type="text" name="pwd"><br /><input type="submit" value="Log In"></form>');
 	}
 	else
 	{
-		echo('<form action="login.php" method="post">' . $uname_en . ': <input type="text" name="uname"> ' . $pwd_en . '<input type="text" name="pwd"><br /><input type="submit" value="Log In">');
+		echo('<form action="login.php" method="post">' . $uname_en . ': <input type="text" name="uname"> ' . $pwd_en . '<input type="text" name="pwd"><br /><input type="submit" value="Log In"></form>');
 	}
 	
 	//Output the option to register if the user has not already done so.

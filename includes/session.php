@@ -1,7 +1,8 @@
 <?php
 
 //Check that the user is logged in
-if(!$_SESSION['id'])
+session_start();
+if(isset($_SESSION['id']))
 {
 	//If user is not logged in, check if they here to log in.
 	$page = $_GET['go'];
