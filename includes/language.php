@@ -6,5 +6,6 @@ $oog_en = 'Please use the in-game browser. You will be unable to participate in 
 $login_en = 'Please log in';
 $uname_en = 'Username';
 $pwd_en = 'Password';
+$register_en = 'Click below to register:';
 
 ?>

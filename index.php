@@ -26,6 +26,10 @@ if($page == 'login')
 	{
 		echo('<form action="login.php" method="post">' . $uname_en . ': <input type="text" name="uname"> ' . $pwd_en . '<input type="text" name="pwd"><br /><input type="submit" value="Log In">');
 	}
+	
+	//Output the option to register if the user has not already done so.
+	echo('<br /><br />' . $register_eng . '<br /><a href="register.php">New User</a>');
+}	
 
 //Output the footer information
 include('includes/page_footer.php');
