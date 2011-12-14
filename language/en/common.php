@@ -38,4 +38,5 @@ $lang = array_merge($lang, array(
 	'NEW_PASS_SHORT'	=> 'New password is too short',
 	'PASSWORD_ILLEGAL'	=> 'Password contains illegal characters',
 	'NEW_PASS_ILLEGAL'	=> 'New password contains illegal characters',
-		
+	'UNAME_NO_EXIST'	=> 'Username does not exist',
+	

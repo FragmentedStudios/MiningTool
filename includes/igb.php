@@ -107,5 +107,9 @@ class IGB
 		//Return the array as the value of the function
 		return $igb_headers;
 	}
-	
-	
+}
+
+//Activate the class
+$IGB = new IGB;
+
+?>	

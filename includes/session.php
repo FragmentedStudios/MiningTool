@@ -1,7 +1,7 @@
 <?php
 /**
 *
-* @constants.php
+* @session.php
 *
 * @package 
 * @version 0.1
