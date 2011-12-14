@@ -217,3 +217,14 @@ class MySQLDB
 		$q = "DELETE FROM " . TBL_ACTIVE_USERS . " WHERE userid = '$userid'";
 		$result = mysql_query($q, $this->connection);
 	}
+	
+	//Empty function to perform any query
+	function query($query)
+	{
+		return mysql_query($query,$this->connection);
+	}
+};
+
+//Create database connections
+$database = new MySQLDB;
+?>	

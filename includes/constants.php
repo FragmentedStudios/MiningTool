@@ -44,3 +44,7 @@ define("TBL_BANNED_USERS", $dbprefix . 'banned_users');
 define("EMAIL_FROM_NAME", $admins_name);
 define("EMAIL_FROM_ADDR", $admins_email);
 define("EMAIL_WELCOME", $send_email);
+
+//Define the cookies
+define("COOKIE_EXPIRE", 60*60*24*100);  
+define("COOKIE_PATH", "/");  
