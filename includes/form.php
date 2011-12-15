@@ -11,7 +11,7 @@
 */
 
 //DO NOT EDIT THESE LINES
-if (!defined('IS_LEGIT')
+if (!defined('IS_LEGIT'))
 {
 	exit;
 }
@@ -34,8 +34,8 @@ class Form
 			$this->errors = $_SESSION['error_arrays'];
 			$this->num_errors = count($this->errors);
 			
-			unset($_SESSION['value_array'];
-			unset($_SESSION['error_array'];
+			unset($_SESSION['value_array']);
+			unset($_SESSION['error_array']);
 		}
 		else
 		{
@@ -59,7 +59,7 @@ class Form
 	//Returns the values from the fields
 	function value($field)
 	{
-		if (array_key_exists($field, $this->values)
+		if (array_key_exists($field, $this->values))
 		{
 			return htmlspecialchars(stripslashes($this->values[$field]));
 		}

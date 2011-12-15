@@ -11,7 +11,7 @@
 */
 
 //DO NOT EDIT THESE LINES
-if (!defined('IS_LEGIT')
+if (!defined('IS_LEGIT'))
 {
 	exit;
 }

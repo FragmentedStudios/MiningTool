@@ -11,7 +11,7 @@
 */
 
 //DO NOT EDIT THESE LINES
-if (!defined('IS_LEGIT')
+if (!defined('IS_LEGIT'))
 {
 	exit;
 }
@@ -59,7 +59,7 @@ class Session
 		global $database;
 		
 		//Cookies?
-		if (isset($_COOKIE['cookname']) && isset($_COOKIE['cookid'))
+		if (isset($_COOKIE['cookname']) && isset($_COOKIE['cookid']))
 		{
 			//If cookies are present, start the session for the user
 			$this->username = $_SESSION['username'] = $_COOKIE['cookname'];
@@ -72,13 +72,13 @@ class Session
 			if($database->confirmUserID($_SESSION['username'], $_SESSION['userid']) != 0)
 			{
 				//Variables are incorrect, user is not logged in
-				unset($_SESSION['username'];
-				unset($_SESSION['userid'];
+				unset($_SESSION['username']);
+				unset($_SESSION['userid']);
 				return false;
 			}
 			
 			//User is logged in, set class variables
-			$this->userinfo = $database->getUserInfo($_SESSION['username'];
+			$this->userinfo = $database->getUserInfo($_SESSION['username']);
 			$this->username = $this->userinfo['username'];
 			$this->userid = $this->userinfo['userid'];
 			return true;
@@ -107,7 +107,7 @@ class Session
 		$field = "pass";
 		if (!$subpass)
 		{
-			$form->setError($field, 'NO_PASSWORD')
+			$form->setError($field, 'NO_PASSWORD');
 		}
 		
 		//Return if form errors exist
@@ -128,7 +128,7 @@ class Session
 		}
 		else if ($result == 2)
 		{
-			$field = "pass"l
+			$field = "pass";
 			$form->setError($field, 'BAD_PASSWORD');
 		}
 		
@@ -179,7 +179,7 @@ class Session
 		global $database, $form, $mailer;
 		
 		//Check for a legitimate username
-		$field = "user"
+		$field = "user";
 		if (!$subuser || strlen($subuser = trim($subuser)) == 0)
 		{
 			$form->setError($field, 'NO_USERNAME');
@@ -296,9 +296,9 @@ class Session
 			{
 				$form->setError($form, 'NEW_PASS_SHORT');
 			}
-			else if ((!eregi("^([0-9a-z])+$", ($subnewpass = trim($subnewpass))))
+			else if ((!eregi("^([0-9a-z])+$", ($subnewpass = trim($subnewpass)))))
 			{
-				$form->setError($form, 'NEW_PASS_ILLEGAL;);
+				$form->setError($form, 'NEW_PASS_ILLEGAL');
 			}
 		}
 		else if ($subcurpass)
@@ -312,7 +312,7 @@ class Session
 		if ($subemail && strlen($subemail = trim($subemail)) > 0)
 		{
 			$regex = "^[_+a-z0-9-]+(\.[_+a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]{1,})*\.([a-z]{2,}){1}$";
-			if (!eregi($regex, $subemail)
+			if (!eregi($regex, $subemail))
 			{
 				$form->setError($form, 'BAD_EMAIL');
 			}
@@ -336,10 +336,10 @@ class Session
 	}
 	
 	//Random string generator
-	function generateRandStr
+	function generateRandStr()
 	{
 		$randstr = "";
-		for ($i=0; $i<$length, $i++)
+		for ($i=0; $i<$length; $i++)
 		{
 			$randnum = mt_rand(0,61);
 			if ($randnum < 10)
