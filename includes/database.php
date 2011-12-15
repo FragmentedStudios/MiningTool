@@ -154,7 +154,7 @@ class MySQLDB
 	//Returns the number of currently active users
 	function calcNumActiveUsers()
 	{
-		$q = "SELEC * FROM " . TBL_ACTIVE_USERS;
+		$q = "SELECT * FROM " . TBL_ACTIVE_USERS;
 		$result = mysql_query($q, $this->connection);
 		$this->num_active_users = mysql_num_rows($result);
 	}
@@ -227,4 +227,4 @@ class MySQLDB
 
 //Create database connections
 $database = new MySQLDB;
-?>	
+?>

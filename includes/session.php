@@ -304,7 +304,7 @@ class Session
 		else if ($subcurpass)
 		{
 			$field = "newpass";
-			$form->setError($field, 'NO_NEW_PASS');
+			$form->setError($field, "NO_NEW_PASS");
 		}
 		
 		//Check email address for errors

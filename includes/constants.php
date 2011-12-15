@@ -48,3 +48,4 @@ define("EMAIL_WELCOME", $send_email);
 //Define the cookies
 define("COOKIE_EXPIRE", 60*60*24*100);  
 define("COOKIE_PATH", "/");  
+?>
