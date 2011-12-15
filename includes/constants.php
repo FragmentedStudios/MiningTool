@@ -11,7 +11,7 @@
 */
 
 //DO NOT EDIT THESE LINES
-if (!defined('IS_LEGIT')
+if (!defined('IS_LEGIT'))
 {
 	exit;
 }
@@ -48,3 +48,4 @@ define("EMAIL_WELCOME", $send_email);
 //Define the cookies
 define("COOKIE_EXPIRE", 60*60*24*100);  
 define("COOKIE_PATH", "/");  
+?>

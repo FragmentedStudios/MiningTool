@@ -12,7 +12,7 @@
 define('IS_LEGIT', true);
 include('config.php');
 include('includes/session.php');
-include('includes/igb.php
+include('includes/igb.php');
 
 ?>
 <html>
@@ -38,28 +38,28 @@ if ($session->logged_in)
 		//If IGB headers are not present, return an error to the user
 		if ($igb->checkIGB == 0)
 		{
-			echo('<tr><td colspan=2 align=center>This is can only be accessed from the EVE In-Game Browser.</td></tr>');
+			echo("<tr><td colspan=2 align=center>This is can only be accessed from the EVE In-Game Browser.</td></tr>");
 		}
 		//If IGB headers are present but site is not trusted, return an error to use
 		else if ($igb->checkIGB == 1)
 		{
-			echo('<tr><td colspan=2 align=center>Please add this site your "trusted sites" list to continue.</td></tr>');
+			echo("<tr><td colspan=2 align=center>Please add this site your \"trusted sites\" list to continue.</td></tr>");
 		}
 		//As long as IGB headers are alright, go ahead and display the page to the user
 		else if ($igb->checkIGB == 2)
 		{
-			include('dashboard.php');
+			include("dashboard.php");
 		}
 		//If IGB headers are present, but the status remains unknown, return an error to the user
 		else
 		{
-			echo('<tr><td colspan=2 align=center>Something went terribly wrong, try clearing the game cache or contacting your CEO.</td></tr>');
+			echo("<tr><td colspan=2 align=center>Something went terribly wrong, try clearing the game cache or contacting your CEO.</td></tr>");
 		}
 	}
 	else
 	{
 		//Output the page regardless of the IGB header settings
-		include('dashboard.php');
+		include("dashboard.php");
 	}
 }
 

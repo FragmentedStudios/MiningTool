@@ -11,7 +11,7 @@
 */
 
 //DO NOT EDIT THESE LINES
-if (!defined('IS_LEGIT')
+if (!defined('IS_LEGIT'))
 {
 	exit;
 }
@@ -98,12 +98,12 @@ class Process
 		global $session, $form;
 		
 		//Registration attempt
-		$retval = $session->register($_POST['user'], $_POST['pass'], $_POST['email'], $_POST['api_id'], $_POST['api_mask'])
+		$retval = $session->register($_POST['user'], $_POST['pass'], $_POST['email'], $_POST['api_id'], $_POST['api_mask']);
 		
 		//Registration successful
 		if ($retval == 0)
 		{
-			$_SESSION['reguname'] = $_POST[['user'];
+			$_SESSION['reguname'] = $_POST['user'];
 			$_SESSION['regsuccess'] = false;
 			header("Location: index.php");
 		}

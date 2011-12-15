@@ -11,7 +11,7 @@
 */
 
 //DO NOT EDIT THESE LINES
-if (!defined('IS_LEGIT')
+if (!defined('IS_LEGIT'))
 {
 	exit;
 }
@@ -23,8 +23,8 @@ include('constants.php');
 class MySQLDB
 {
 	var $connection;		//The MySQL Connection
-	var $num_active_users	//Number of users currently logged in
-	var $num_member			//The number of registered users
+	var $num_active_users;	//Number of users currently logged in
+	var $num_member;			//The number of registered users
 	
 	//Handle the connection to the database
 	function MySQLDB()
@@ -109,7 +109,7 @@ class MySQLDB
 		
 		//Insert the data into the table
 		$q = "INSERT INTO " . TBL_USERS . " (username, password, email, apiID, apiMask) VALUES ('$username', '$password', '$email', '$apiID', '$apiMask')";
-		$return mysql_query($q, $this->connection);
+		return mysql_query($q, $this->connection);
 	}
 	
 	//Function for handling the updating of any of the user's information
@@ -128,7 +128,7 @@ class MySQLDB
 		$result = mysql_query($q, $this->connection);
 		
 		//If there was an error, return the username supplied for correction
-		if (!$result || (mysql_num_rows($result) < 1)
+		if (!$result || (mysql_num_rows($result) < 1))
 		{
 			return NULL;
 		}
@@ -154,7 +154,7 @@ class MySQLDB
 	//Returns the number of currently active users
 	function calcNumActiveUsers()
 	{
-		$q = "SELEC * FROM " . TBL_ACTIVE_USERS;
+		$q = "SELECT * FROM " . TBL_ACTIVE_USERS;
 		$result = mysql_query($q, $this->connection);
 		$this->num_active_users = mysql_num_rows($result);
 	}
@@ -164,7 +164,7 @@ class MySQLDB
 	{
 		$q = "INSERT INTO " . TBL_ACTIVE_USERS . " (userID, opID, shipID, time, role) VALUES ('$userid', '$opid', '$shipid', '$time', $role')";
 		$result = mysql_query($q, $this->connection);
-		$this->calcNumActiveUsers
+		$this->calcNumActiveUsers;
 	}
 	
 	//Look up the users ID for insertion into tables
@@ -227,4 +227,4 @@ class MySQLDB
 
 //Create database connections
 $database = new MySQLDB;
-?>	
+?>

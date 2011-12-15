@@ -11,7 +11,7 @@
 */
 
 //DO NOT EDIT THESE LINES
-if (!defined('IS_LEGIT')
+if (!defined('IS_LEGIT'))
 {
 	exit;
 }
@@ -38,5 +38,5 @@ $lang = array_merge($lang, array(
 	'NEW_PASS_SHORT'	=> 'New password is too short',
 	'PASSWORD_ILLEGAL'	=> 'Password contains illegal characters',
 	'NEW_PASS_ILLEGAL'	=> 'New password contains illegal characters',
-	'UNAME_NO_EXIST'	=> 'Username does not exist',
-	
+	'UNAME_NO_EXIST'	=> 'Username does not exist'));
+?>
