@@ -1,3 +1,7 @@
 <?php
-// empty file right now to make the imports not error out
+//Some values in here, but still a lot to do
+$dbhname = "localhost";
+$dbuname = "djswets_tnhi";
+$dbpass = "h4nn1rul3s";
+$dbname = "djswets_tnhi_test";
 ?>
