@@ -17,6 +17,7 @@ include('includes/igb.php');
 ?>
 <html>
 	<head>
+	<script src="js/login.js"></script>
 		<title>
 			TnH Industries Mining Tool - v0.1
 		</title>
@@ -26,11 +27,21 @@ include('includes/igb.php');
 			<tr>
 				<th colspan="2">TnH Industries Mining Tool - v0.1</th>
 			</tr>
+		</table>
+	<form action="javascript:login()" method="post">
+		<input name="userName" type="text" id="usernameLogin" value=""/>
+		<input name="password" type="password" id="passwordLogin" value=""/>
+		<input type="submit" name="Submit" value="Login"/>
+	</form>
+	<div id="loginResponse"></div>
+	</body>
 
 <?
 
 //Check if the user is logged in
-if ($session->logged_in)
+
+
+/* if ($session->logged_in)
 {
 	//Check the IGB settings
 	if ($igb->no_igb == 0)
@@ -60,7 +71,7 @@ if ($session->logged_in)
 	{
 		//Output the page regardless of the IGB header settings
 		include("dashboard.php");
-	}
-}
+	} */
+include("dashboard.php");
 
 ?>

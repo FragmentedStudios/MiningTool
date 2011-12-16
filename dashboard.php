@@ -34,17 +34,8 @@ if ($igb->checkIGB == 1)
 <html>
 <head>
 <script type="text/javascript" src="js/dashboard.js"></script>
-<script type="text/javascript">
-function startTime(){
-	var a = setTimeout("getCurrentOps()",3000);
-	var b = setTimeout("getFutureOps()",3000);
-	var c = setTimeout("getOnlineUsers()",3000);
-	var d = setTimeout("getLifetimeOre()",3000);	
-}
-
-</script>
 </head>
-<body onload="startTimer()">
+<body onload="onload()">
 	<!-- table containing current operations -->
 	<h2>Current Operations</h2>
 	<div id="currentOpSchedule"><b>Current Operations are listed here...</b></div>
