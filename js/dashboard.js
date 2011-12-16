@@ -60,3 +60,21 @@ function createObject(){
 	}
 	return requestType; // return the proper object
 }
+
+// Starts the timer for the functions. set to 30 seconds initially for testing purposes
+function startTimer(){
+	var a = setTimeout("getCurrentOps()",30000);
+	var b = setTimeout("getFutureOps()",30000);
+	var c = setTimeout("getOnlineUsers()",30000);
+	var d = setTimeout("getLifetimeOre()",30000);	
+}
+
+// run when the page loads. starts all of the timers and does the initial calls
+function onload(){
+	getCurrentOps();
+	getFutureOps();
+	getOnlineUsers();
+	getLifetimeOre();
+	startTimer();
+}
+
