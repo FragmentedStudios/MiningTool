@@ -36,29 +36,30 @@ include('includes/igb.php');
 	<div id="loginResponse"></div>
 	</body>
 
-<?
+<?php
 
 //Check if the user is logged in
 
 
-/* if ($session->logged_in)
+/* if ($session->logged_in) */
 {
 	//Check the IGB settings
 	if ($igb->no_igb == 0)
 	{
 		//If IGB headers are not present, return an error to the user
-		if ($igb->checkIGB == 0)
+		if ($igb->checkIGB() == 0)
 		{
 			echo("<tr><td colspan=2 align=center>This is can only be accessed from the EVE In-Game Browser.</td></tr>");
 		}
 		//If IGB headers are present but site is not trusted, return an error to use
-		else if ($igb->checkIGB == 1)
+		else if ($igb->checkIGB() == 1)
 		{
 			echo("<tr><td colspan=2 align=center>Please add this site your \"trusted sites\" list to continue.</td></tr>");
 		}
 		//As long as IGB headers are alright, go ahead and display the page to the user
-		else if ($igb->checkIGB == 2)
+		else if ($igb->checkIGB() == 2)
 		{
+			// we're gonna do something with the info here eventually right?
 			include("dashboard.php");
 		}
 		//If IGB headers are present, but the status remains unknown, return an error to the user
@@ -71,7 +72,7 @@ include('includes/igb.php');
 	{
 		//Output the page regardless of the IGB header settings
 		include("dashboard.php");
-	} */
-include("dashboard.php");
+	}
+} 
 
 ?>
