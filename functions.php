@@ -3,6 +3,24 @@
 <?php
 // write all the functions first, with queries
 // all of the functions return HTML to be popped into relevant elements with javascript
+$function = $_POST['function'];
+
+switch ($function){
+	// case 1 = get Lifetime Ore amount
+	case 1:
+		getLifetimeOre();
+		break;
+	// case 2 = get list of logged in users
+	case 2:
+		getOnlineUsers();
+		break;
+	case 3:
+		getCurrentOps();
+		break;
+	case 4:
+		getFutureOps();
+		break;
+}
 
 // function to return all results from the operations database with startTime > currentTime
 function getFutureOps(){
