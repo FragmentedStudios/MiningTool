@@ -5,7 +5,9 @@ function getLifetimeOre(){
 	// based on this username we create a query and get the info
 	// we need from the database.
 	var request = createObject();
-	request.open('post', 'functions.php?function=1&uid='+uid);
+	var params = "function=1&uid="+uid;
+	request.open('post', 'functions.php', true);
+	postHeaders(request, params);
 	// when we get the response, put it into the html element with id 'lifetimeOreAmount'
 	request.onreadystatechange = showResponse('lifetimeOreAmount');
 	request.send();	
@@ -14,8 +16,9 @@ function getLifetimeOre(){
 function getOnlineUsers(){
 	// query again to get the online users. display it as well	
 	var request = createObject();
-	
-	request.open('post', 'functions.php?function=2');
+	var params = "function=2";
+	request.open('post', 'functions.php', true);
+	postHeaders(request, params);
 	// when we get the response, put it into the html element with id 'onlineUserList'
 	request.onreadystatechange = showResponse('onlineUserList');
 	request.send();
@@ -25,8 +28,10 @@ function getOnlineUsers(){
 function getCurrentOps(){
 	// query to get the operation schedule from the operations table
 	var request = createObject();
+	var params = "function=3";
 	// send our request to functions.php
-	request.open('post', 'functions.php?function=3');
+	request.open('post', 'functions.php', true);
+	postHeaders(request, params);
 	// when we get the response, put it into the html element with id 'operationSchedule'
 	request.onreadystatechange = showResponse('currentOpSchedule');
 	request.send();	
@@ -35,8 +40,9 @@ function getCurrentOps(){
 // gets all mining operations with startTime > currentTime
 function getFutureOps(){
 	var request = createObject();
-	
-	request.open('post','functions.php?function=4');
+	var params = "function=4";
+	postHeaders(request, params);	
+	request.open('post','functions.php');
 	request.onreadystatechange = showResponse('futureOpsSchedule');
 }
 
@@ -76,5 +82,12 @@ function onload(){
 	getOnlineUsers();
 	getLifetimeOre();
 	startTimer();
+}
+
+// function puts the correct headers on the request for POSTing
+function postHeaders(request, params){
+	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.setRequestHeader("Content-length", params.length);
+	request.setRequestHeader("Connection", "close");
 }
 
