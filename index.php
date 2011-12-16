@@ -40,39 +40,41 @@ include('includes/igb.php');
 
 //Check if the user is logged in
 
-
-/* if ($session->logged_in) */
+// if the user wants IGB only, no_igb will equal 0
+if ($igb->no_igb == 0)
 {
-	//Check the IGB settings
-	if ($igb->no_igb == 0)
-	{
-		//If IGB headers are not present, return an error to the user
-		if ($igb->checkIGB() == 0)
-		{
+
+	// use the checkIGB method to find out if we have all we need
+	switch($igb->checkIGB()){
+		// not an eve igb
+		case 0:
 			echo("<tr><td colspan=2 align=center>This is can only be accessed from the EVE In-Game Browser.</td></tr>");
-		}
-		//If IGB headers are present but site is not trusted, return an error to use
-		else if ($igb->checkIGB() == 1)
-		{
+			break;
+		// eve igb is present, but our site isn't trusted
+		case 1:
 			echo("<tr><td colspan=2 align=center>Please add this site your \"trusted sites\" list to continue.</td></tr>");
-		}
-		//As long as IGB headers are alright, go ahead and display the page to the user
-		else if ($igb->checkIGB() == 2)
-		{
-			// we're gonna do something with the info here eventually right?
-			include("dashboard.php");
-		}
-		//If IGB headers are present, but the status remains unknown, return an error to the user
-		else
-		{
+			break;	
+		// eve igb is present, and we are trusted		
+		case 2:
+			// everything is good. Need to check for log in;
+			if ($session->logged_in){
+				include("dashboard.php");
+			}
+			break;
+		// catastrophe
+		default:
 			echo("<tr><td colspan=2 align=center>Something went terribly wrong, try clearing the game cache or contacting your CEO.</td></tr>");
-		}
+			break;
 	}
-	else
-	{
-		//Output the page regardless of the IGB header settings
+}
+// we don't care if it is the IGB or not; everyone is allowed to view it
+else
+{
+	//Output the page regardless of the IGB header settings
+	if($session->logged_in){
 		include("dashboard.php");
 	}
-} 
+}
+
 
 ?>
