@@ -36,7 +36,7 @@
 	} 
 	?>
 >
-<font size="2">Remember me next time     
+<font size="2">Remember me next time </font>   
 <input type="hidden" name="sublogin" value="1">
 <input type="submit" value="Login"></td></tr>
 <tr><td colspan="2" align="left"><br><font size="2">[<a href="forgotpass.php">Forgot Password?</a>]</font></td><td align="right"></td></tr>
