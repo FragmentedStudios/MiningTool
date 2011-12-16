@@ -28,16 +28,9 @@ include('includes/igb.php');
 				<th colspan="2">TnH Industries Mining Tool - v0.1</th>
 			</tr>
 		</table>
-	<form action="javascript:login()" method="post">
-		<input name="userName" type="text" id="usernameLogin" value=""/>
-		<input name="password" type="password" id="passwordLogin" value=""/>
-		<input type="submit" name="Submit" value="Login"/>
-	</form>
-	<div id="loginResponse"></div>
-	</body>
-
 <?php
 
+include('login.php');
 //Check if the user is logged in
 
 // if the user wants IGB only, no_igb will equal 0
